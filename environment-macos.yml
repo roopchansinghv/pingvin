@@ -21,6 +21,7 @@ dependencies:
   - fftw=3.3.9
   - fmt=8.1.1
   - gmock=1.14.0                            # dev
+  - go=1.23.4
   - gtest=1.14.0                            # dev
   - h5py=3.7.0
   - hdf5=1.10.6
