@@ -175,7 +175,7 @@ namespace Gadgetron {
             double reconFOV_E1 = std::get<double>(recon_fov[1]);
             double reconFOV_E2 = std::get<double>(recon_fov[2]);
 
-            long encoding = std::get<long>(recon_res.meta[0]["encoding"].front());
+            long encoding = std::get<long long>(recon_res.meta[0]["encoding"].front());
 
             size_t reconSizeRO = recon_size_[encoding][0];
             size_t reconSizeE1 = recon_size_[encoding][1];

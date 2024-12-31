@@ -71,7 +71,7 @@ namespace Gadgetron {
             return GADGET_OK;
         }
 
-        size_t encoding = (size_t)std::get<long>(recon_res_->meta[0]["encoding"].front());
+        size_t encoding = (size_t)std::get<long long>(recon_res_->meta[0]["encoding"].front());
         GADGET_CHECK_RETURN(encoding<num_encoding_spaces_, GADGET_FAIL);
 
         std::stringstream os;

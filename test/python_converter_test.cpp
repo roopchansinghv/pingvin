@@ -344,10 +344,10 @@ TEST_F(python_converter_test, mrd_imagemeta)
     PythonFunction<mrd::ImageMeta> modify_meta("__main__", "modify_meta");
     meta = modify_meta(meta);
 
-    EXPECT_EQ(std::get<long>(meta["TestLong"][0]), 1);
-    EXPECT_EQ(std::get<long>(meta["TestLong"][1]), 2);
-    EXPECT_EQ(std::get<long>(meta["TestLong"][2]), 3);
-    EXPECT_EQ(std::get<long>(meta["TestLong"][3]), 4);
+    EXPECT_EQ(std::get<long long>(meta["TestLong"][0]), 1);
+    EXPECT_EQ(std::get<long long>(meta["TestLong"][1]), 2);
+    EXPECT_EQ(std::get<long long>(meta["TestLong"][2]), 3);
+    EXPECT_EQ(std::get<long long>(meta["TestLong"][3]), 4);
 
     EXPECT_FLOAT_EQ(std::get<double>(meta["TestDouble"][0]), 1.1);
     EXPECT_FLOAT_EQ(std::get<double>(meta["TestDouble"][1]), 2.2);
@@ -355,7 +355,7 @@ TEST_F(python_converter_test, mrd_imagemeta)
 
     EXPECT_EQ(std::get<std::string>(meta["TestString"][0]), "This");
     EXPECT_EQ(std::get<std::string>(meta["TestString"][1]), "is");
-    EXPECT_EQ(std::get<long>(meta["TestString"][2]), 42);
+    EXPECT_EQ(std::get<long long>(meta["TestString"][2]), 42);
 }
 
 TEST_F(python_converter_test, array_mrd_imagemeta)
@@ -391,10 +391,10 @@ TEST_F(python_converter_test, array_mrd_imagemeta)
     EXPECT_EQ(meta.get_size(0), 12);
     EXPECT_EQ(meta.get_size(1), 7);
 
-    EXPECT_EQ(std::get<long>(meta(0, 0)["TestLong"][0]), 1);
-    EXPECT_EQ(std::get<long>(meta(1, 1)["TestLong"][1]), 2);
-    EXPECT_EQ(std::get<long>(meta(11, 6)["TestLong"][2]), 3);
-    EXPECT_EQ(std::get<long>(meta(11, 6)["TestLong"][3]), 4);
+    EXPECT_EQ(std::get<long long>(meta(0, 0)["TestLong"][0]), 1);
+    EXPECT_EQ(std::get<long long>(meta(1, 1)["TestLong"][1]), 2);
+    EXPECT_EQ(std::get<long long>(meta(11, 6)["TestLong"][2]), 3);
+    EXPECT_EQ(std::get<long long>(meta(11, 6)["TestLong"][3]), 4);
 
     EXPECT_FLOAT_EQ(std::get<double>(meta(7, 5)["TestDouble"][0]), 1.0);
     EXPECT_FLOAT_EQ(std::get<double>(meta(10, 5)["TestDouble"][0]), 2.0);
@@ -404,7 +404,7 @@ TEST_F(python_converter_test, array_mrd_imagemeta)
     EXPECT_EQ(std::get<std::string>(meta(8, 4)["TestString"][2]), "a test!");
     EXPECT_EQ(std::get<std::string>(meta(9, 4)["TestString"][0]), "This");
     EXPECT_EQ(std::get<std::string>(meta(9, 4)["TestString"][1]), "is");
-    EXPECT_EQ(std::get<long>(meta(9, 4)["TestString"][2]), 42);
+    EXPECT_EQ(std::get<long long>(meta(9, 4)["TestString"][2]), 42);
 }
 
 TEST_F(python_converter_test, mrd_image_array)

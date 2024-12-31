@@ -195,7 +195,7 @@ namespace Gadgetron {
 
         // -------------------------------------------------------------
 
-        size_t encoding = (size_t)std::get<long>(lax.meta[0]["encoding"].front());
+        size_t encoding = (size_t)std::get<long long>(lax.meta[0]["encoding"].front());
         GADGET_CHECK_RETURN(encoding < num_encoding_spaces_, GADGET_FAIL);
 
         size_t RO = lax.data.get_size(0);

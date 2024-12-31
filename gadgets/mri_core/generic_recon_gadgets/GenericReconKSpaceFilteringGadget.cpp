@@ -102,7 +102,7 @@ namespace Gadgetron {
             return GADGET_OK;
         }
 
-        size_t encoding = (size_t)std::get<long>(recon_res_->meta[0]["encoding"].front());
+        size_t encoding = (size_t)std::get<long long>(recon_res_->meta[0]["encoding"].front());
         GADGET_CHECK_RETURN(encoding<num_encoding_spaces_, GADGET_FAIL);
 
         std::string dataRole = std::get<std::string>(recon_res_->meta[0][GADGETRON_DATA_ROLE].front());
@@ -124,9 +124,9 @@ namespace Gadgetron {
 
         if (recon_res_->meta[0].count("sampling_limits_RO")) {
             auto& sl = recon_res_->meta[0]["sampling_limits_RO"];
-            sampling_limits.kspace_encoding_step_0.minimum = (uint32_t)std::get<long>(sl[0]);
-            sampling_limits.kspace_encoding_step_0.center = (uint32_t)std::get<long>(sl[1]);
-            sampling_limits.kspace_encoding_step_0.maximum = (uint32_t)std::get<long>(sl[2]);
+            sampling_limits.kspace_encoding_step_0.minimum = (uint32_t)std::get<long long>(sl[0]);
+            sampling_limits.kspace_encoding_step_0.center = (uint32_t)std::get<long long>(sl[1]);
+            sampling_limits.kspace_encoding_step_0.maximum = (uint32_t)std::get<long long>(sl[2]);
         }
 
         if ( !( (sampling_limits.kspace_encoding_step_0.minimum >= 0) && (sampling_limits.kspace_encoding_step_0.maximum < RO) && (sampling_limits.kspace_encoding_step_0.minimum <= sampling_limits.kspace_encoding_step_0.maximum)) )
@@ -138,9 +138,9 @@ namespace Gadgetron {
 
         if (recon_res_->meta[0].count("sampling_limits_E1")) {
             auto& sl = recon_res_->meta[0]["sampling_limits_E1"];
-            sampling_limits.kspace_encoding_step_1.minimum = (uint32_t)std::get<long>(sl[0]);
-            sampling_limits.kspace_encoding_step_1.center = (uint32_t)std::get<long>(sl[1]);
-            sampling_limits.kspace_encoding_step_1.maximum = (uint32_t)std::get<long>(sl[2]);
+            sampling_limits.kspace_encoding_step_1.minimum = (uint32_t)std::get<long long>(sl[0]);
+            sampling_limits.kspace_encoding_step_1.center = (uint32_t)std::get<long long>(sl[1]);
+            sampling_limits.kspace_encoding_step_1.maximum = (uint32_t)std::get<long long>(sl[2]);
         }
 
         if (!((sampling_limits.kspace_encoding_step_1.minimum >= 0) && (sampling_limits.kspace_encoding_step_1.maximum < E1) && (sampling_limits.kspace_encoding_step_1.minimum <= sampling_limits.kspace_encoding_step_1.maximum)))
@@ -152,9 +152,9 @@ namespace Gadgetron {
 
         if (recon_res_->meta[0].count("sampling_limits_E2")) {
             auto& sl = recon_res_->meta[0]["sampling_limits_E2"];
-            sampling_limits.kspace_encoding_step_2.minimum = (uint32_t)std::get<long>(sl[0]);
-            sampling_limits.kspace_encoding_step_2.center = (uint32_t)std::get<long>(sl[1]);
-            sampling_limits.kspace_encoding_step_2.maximum = (uint32_t)std::get<long>(sl[2]);
+            sampling_limits.kspace_encoding_step_2.minimum = (uint32_t)std::get<long long>(sl[0]);
+            sampling_limits.kspace_encoding_step_2.center = (uint32_t)std::get<long long>(sl[1]);
+            sampling_limits.kspace_encoding_step_2.maximum = (uint32_t)std::get<long long>(sl[2]);
         }
 
         if (!((sampling_limits.kspace_encoding_step_2.minimum >= 0) && (sampling_limits.kspace_encoding_step_2.maximum < E2) && (sampling_limits.kspace_encoding_step_2.minimum <= sampling_limits.kspace_encoding_step_2.maximum)))

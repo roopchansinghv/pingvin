@@ -742,7 +742,7 @@ namespace Gadgetron
         }
     }
 
-    template void get_mrd_meta_values(const mrd::ImageMeta& attrib, const std::string& name, std::vector<long>& v);
+    template void get_mrd_meta_values(const mrd::ImageMeta& attrib, const std::string& name, std::vector<long long>& v);
     template void get_mrd_meta_values(const mrd::ImageMeta& attrib, const std::string& name, std::vector<double>& v);
     template void get_mrd_meta_values(const mrd::ImageMeta& attrib, const std::string& name, std::vector<std::string>& v);
 
